@@ -13,11 +13,13 @@
       padding: 0;
       background: linear-gradient(to right, #ff7e5f, #feb47b);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
-      height: 100vh;
       text-align: center;
       color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     /* إعداد الحاوية الرئيسية */
@@ -28,12 +30,13 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       animation: fadeIn 2s ease-in-out;
       max-width: 800px;
-      width: 100%;
+      width: 90%;
+      margin-top: 20px;
     }
 
     /* النص الرئيسي */
     .welcome-message h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 20px;
       animation: slideIn 1s ease-in-out;
     }
@@ -83,10 +86,11 @@
     .content {
       margin-top: 40px;
       text-align: center;
+      animation: fadeInUp 2s ease-in-out;
     }
 
     .content img {
-      width: 80%;
+      width: 100%;
       max-width: 600px;
       border-radius: 10px;
       margin: 20px 0;
@@ -97,18 +101,139 @@
       transform: scale(1.05);
     }
 
+    /* نموذج الاشتراك */
+    .subscribe-form {
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .subscribe-form input[type="email"] {
+      padding: 10px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      margin-right: 10px;
+      width: 250px;
+      border: none;
+    }
+
+    .subscribe-form button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: #ff7e5f;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .subscribe-form button:hover {
+      background-color: #feb47b;
+    }
+
+    /* قسم الأسئلة الشائعة */
+    .faq-section {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 10px;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 1000px;
+      box-sizing: border-box;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      text-align: right;
+    }
+
+    .faq-item h3 {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #feb47b;
+    }
+
+    .faq-item p {
+      font-size: 1.2rem;
+      color: #ffffff;
+      display: none;
+      padding-top: 5px;
+    }
+
+    .faq-item.active p {
+      display: block;
+    }
+
+    /* قسم "عن الموقع" */
+    .about-section {
+      margin-top: 60px;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* الفوتر */
     .footer {
-      position: fixed;
+      position: relative;
       bottom: 20px;
       width: 100%;
       text-align: center;
       font-size: 1rem;
       color: white;
       opacity: 0.8;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 10px;
     }
+
+    /* استجابة للمحتوى */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+        justify-content: flex-start;
+      }
+
+      .content img {
+        width: 100%;
+        max-width: 90%;
+      }
+
+      .subscribe-form input[type="email"] {
+        width: 70%;
+      }
+
+      .subscribe-form button {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+      }
+
+      .faq-section {
+        padding: 30px;
+      }
+
+      .faq-item h3 {
+        font-size: 1.3rem;
+      }
+    }
+
   </style>
 </head>
 <body>
+
   <div class="welcome-container">
     <div class="welcome-message">
       <h1>مرحبًا بك في موقعنا!</h1>
@@ -123,9 +248,45 @@
     <img src="https://via.placeholder.com/600x300" alt="صورة ترحيب" />
   </div>
 
+  <div class="subscribe-form">
+    <h3>اشترك في نشرتنا الإخبارية</h3>
+    <form action="#">
+      <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
+      <button type="submit">اشترك</button>
+    </form>
+  </div>
+
+  <!-- قسم الأسئلة الشائعة -->
+  <div class="faq-section">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="faq-item">
+      <h3>ما هي خدمات الموقع؟</h3>
+      <p>نحن نقدم خدمات متنوعة تتعلق بالتصفح والمحتوى التفاعلي الممتع.</p>
+    </div>
+    <div class="faq-item">
+      <h3>هل يمكنني التسجيل في الموقع؟</h3>
+      <p>نعم، يمكنك التسجيل في الموقع للوصول إلى الميزات الخاصة.</p>
+    </div>
+  </div>
+
+  <!-- قسم "عن الموقع" -->
+  <div class="about-section">
+    <h2>عن الموقع</h2>
+    <p>هذا الموقع تم تصميمه ليقدم لك تجربة فريدة من نوعها في عالم الإنترنت. هدفنا هو توفير محتوى تفاعلي وسهل الاستخدام.</p>
+  </div>
+
   <div class="footer">
     <p>© 2025 موقعنا - جميع الحقوق محفوظة</p>
   </div>
+
+  <script>
+    // وظيفة لفتح وإغلاق محتويات الأسئلة الشائعة
+    document.querySelectorAll('.faq-item h3').forEach(item => {
+      item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
