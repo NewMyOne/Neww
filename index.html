@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>صفحة ترحيبية مميزة</title>
+  <style>
+    /* تعيين الخلفية والألوان الأساسية */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    /* إعداد الحاوية الرئيسية */
+    .welcome-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 2s ease-in-out;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* النص الرئيسي */
+    .welcome-message h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    /* الفقرة */
+    .welcome-message p {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    /* زر الاستكشاف */
+    .explore-btn {
+      background-color: #ff7e5f;
+      padding: 15px 35px;
+      font-size: 1.4rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      border: 2px solid #feb47b;
+    }
+
+    .explore-btn:hover {
+      background-color: #feb47b;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* تأثيرات الحركة */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* إضافة تأثير للمحتوى عند التمرير */
+    .content {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .content img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin: 20px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .content img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      color: white;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <div class="welcome-message">
+      <h1>مرحبًا بك في موقعنا!</h1>
+      <p>نحن سعيدون بزيارتك. استمتع بتصفح الموقع.</p>
+      <a href="#explore" class="explore-btn">استكشاف المزيد</a>
+    </div>
+  </div>
+
+  <div class="content" id="explore">
+    <h2>اكتشف المزيد</h2>
+    <p>نحن نقدم لك تجربة رائعة وممتعة في هذا الموقع.</p>
+    <img src="https://via.placeholder.com/600x300" alt="صورة ترحيب" />
+  </div>
+
+  <div class="footer">
+    <p>© 2025 موقعنا - جميع الحقوق محفوظة</p>
+  </div>
+
+</body>
+</html>
